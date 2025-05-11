@@ -1,0 +1,113 @@
+.footer {
+  background-color: #2f1e4c;
+  color: #e1dbee;
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.section_title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.frase-contato {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #dcd1f0;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  margin: 16px 0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  background-color: #b8962f;
+}
+
+.contato-infos {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contato-infos a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contato-infos a:hover {
+  text-decoration: underline;
+}
+
+.info-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.info-item i {
+  font-size: 1.1rem;
+  color: #d1b3ff;
+}
+
+.footer-bottom {
+  margin-top: 32px;
+  font-size: 0.85rem;
+}
+
+.footer-bottom a {
+  color: #d1b3ff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .section_title {
+    font-size: 1.5rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+  }
+
+  .info-item i {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+
