@@ -1,1 +1,0 @@
-# sensitiva_lunara
