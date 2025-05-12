@@ -117,19 +117,20 @@ header.shrink .btn_default {
 
 
 /* Responsividade para telas menores */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
     header {
-        padding: 18px 4%; /* Ajusta o padding para telas menores */
+        padding: 14px 4%; /* Reduz um pouco mais o padding */
     }
 
     #navbar {
         justify-content: space-between;
-        padding: 0 20px; /* Espaçamento lateral para os itens de navbar */
+        padding: 0 10px; /* Reduz o padding lateral */
     }
 
     #nav_list {
-        display: none; /* Esconde os itens de navegação */
-        flex-direction: column; /* Torna a lista vertical */
+        display: none;
+        flex-direction: column;
         gap: 16px;
         position: absolute;
         top: 70px;
@@ -138,53 +139,50 @@ header.shrink .btn_default {
         width: 200px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
-    /* Ícone de menu para dispositivos móveis */
     .menu-icon {
-        font-size: 30px;
-        color: white;
+        display: block !important; /* Garante que o ícone apareça */
+        font-size: 28px;
+        color: #552774;
         cursor: pointer;
-    }
-
-    /* Exibe o menu quando o ícone é clicado */
-    #nav_list.show {
-        display: flex;
     }
 
     #nav_logo {
         font-size: 20px;
+        color: #552774;
     }
 
-    /* Ajuste do logo para dispositivos móveis */
     .logo_header {
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
     }
 
-    /* Tamanho menor para o botão "Contato" */
     .btn_default {
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 8px 14px;
+        font-size: 13px;
     }
 }
 
-/* Responsividade para telas ainda menores (ex: smartphones verticais) */
+/* Responsividade para smartphones menores (ex: iPhone 11 em modo vertical) */
 @media (max-width: 480px) {
     #nav_logo {
         font-size: 18px;
     }
 
-    #navbar i {
-        font-size: 26px;
-    }
-
     .btn_default {
         font-size: 12px;
+        padding: 6px 12px;
     }
 
-    /* Esconde o ícone de menu na versão desktop */
     #navbar i {
-        display: none;
+        font-size: 24px;
+        display: block !important; /* Garante visibilidade se necessário */
+    }
+
+    .logo_header {
+        width: 32px;
+        height: 32px;
     }
 }
