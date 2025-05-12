@@ -116,54 +116,79 @@ header.shrink .btn_default {
 }
 
 
-/* Responsividade para telas menores */
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    header {
-        padding: 14px 4%; /* Reduz um pouco mais o padding */
-    }
-
-    #navbar {
-        justify-content: space-between;
-        padding: 0 10px; /* Reduz o padding lateral */
-    }
-
-    #nav_list {
-        display: none;
-        flex-direction: column;
-        gap: 16px;
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        background-color: white;
-        width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-    }
-
-    .menu-icon {
-        display: block !important; /* Garante que o ícone apareça */
-        font-size: 28px;
-        color: #552774;
-        cursor: pointer;
-    }
-
-    #nav_logo {
-        font-size: 20px;
-        color: #552774;
-    }
-
-    .logo_header {
-        width: 36px;
-        height: 36px;
-    }
-
-    .btn_default {
-        padding: 8px 14px;
-        font-size: 13px;
-    }
+#navbar i,
+.nav_item a {
+    color: #552774;
 }
+
+/* Quando encolher (rolagem) - já está configurado */
+header.shrink .nav_item a,
+header.shrink #navbar i {
+    color: #552774;
+}
+
+/* Esconde o botão X em telas maiores */
+@media (min-width: 769px) {
+  .close-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav_list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 55%;
+    background-color: white;
+    padding: 80px 20px 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #nav_list.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    color: #552774;
+    cursor: pointer;
+    margin-left: 12px;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: #552774;
+    cursor: pointer;
+  }
+
+  #navbar i,
+  .nav_item a {
+    color: #552774;
+  }
+
+  .btn_default {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+
+
 
 /* Responsividade para smartphones menores (ex: iPhone 11 em modo vertical) */
 @media (max-width: 480px) {

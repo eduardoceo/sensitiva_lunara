@@ -20,30 +20,31 @@
 <body>
 
 
-  <header>
-    <nav id="navbar">
-        <i class="fa-regular fa-moon"> Sensitiva Lunara</i>
-        <ul id="nav_list">
-            <li class="nav_item active">
-                <a href="#inicio">Início</a>
-            </li>
-            <li class="nav_item">
-                <a href="#servicos">Serviços</a>
-            </li>
-            <li class="nav_item">
-                <a href="#avaliacoes">Avaliações</a>
-            </li>
-            <li class="nav_item">
-                <a href="#sobre">Sobre</a>
-            </li>
-        </ul>
-       <a href="https://wa.link/mggtll"> <button class="btn_default">
-            Contato
-        </button> </a>
-        <!-- Ícone de menu para telas pequenas -->
-        <i class="menu-icon fas fa-bars"></i>
-    </nav>
+<header>
+  <nav id="navbar">
+    <i class="fa-regular fa-moon"> Sensitiva Lunara</i>
+
+    <ul id="nav_list">
+      <!-- Botão X dentro do menu lateral -->
+      <i class="close-icon fas fa-times"></i>
+
+      <li class="nav_item active"><a href="#inicio">Início</a></li>
+      <li class="nav_item"><a href="#servicos">Serviços</a></li>
+      <li class="nav_item"><a href="#avaliacoes">Avaliações</a></li>
+      <li class="nav_item"><a href="#sobre">Sobre</a></li>
+    </ul>
+
+    <a href="https://wa.link/mggtll">
+      <button class="btn_default">Contato</button>
+    </a>
+
+    <!-- Ícone do menu -->
+    <i class="menu-icon fas fa-bars"></i>
+  </nav>
 </header>
+
+
+
 
   
   <main id="content">
@@ -287,6 +288,27 @@ document.querySelector('.menu-icon').addEventListener('click', function() {
   window.addEventListener("scroll", changeActiveLink);
 
 
+
+function toggleMenu() {
+  document.getElementById("nav_list").classList.toggle("show");
+}
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu-icon");
+    const closeIcon = document.querySelector(".close-icon");
+    const navList = document.getElementById("nav_list");
+
+    if (menuIcon && closeIcon && navList) {
+      menuIcon.addEventListener("click", () => {
+        navList.classList.add("show");
+      });
+
+      closeIcon.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+    }
+  });
 
 
   </script>
