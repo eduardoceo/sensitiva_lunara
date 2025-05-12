@@ -1,138 +1,99 @@
 #servicos {
-  background: #f5f0fc;
-  color: #2e084b;
-  padding: 60px 20px;
-}
+      background: #f5f0fc;
+      color: #2e084b;
+      padding: 60px 20px;
+    }
 
-.servicos-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
+    .servicos-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-.servicos-container .title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #552774;
-}
+    .servicos-container .title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #552774;
+    }
 
-.carrossel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    .carrossel-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
 
-.carrossel-servicos {
-  display: flex;
-  gap: 20px;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
+    .carrossel-servicos {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
-.carrossel-servicos::-webkit-scrollbar {
-  display: none;
-}
+    .servico-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+      background: white;
+      border-radius: 12px;
+      margin: 0 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.carrossel-servicos {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+    .servico-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
 
-.servico-card {
-  flex: 0 0 auto;
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .servico-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
 
-.servico-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
+    .servico-card h3 {
+      font-size: 1.3rem;
+      color: #552774;
+      margin: 15px 10px 5px;
+    }
 
-.servico-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
+    .servico-card p {
+      font-size: 1rem;
+      color: #434343;
+      margin: 0 10px 20px;
+    }
 
-.servico-card h3 {
-  font-size: 1.3rem;
-  color: #552774;
-  margin: 15px 10px 5px;
-}
+    .botoes-carrossel {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
 
-.servico-card p {
-  font-size: 1rem;
-  color: #434343;
-  margin: 0 10px 20px;
-}
+    .botao {
+      background-color: #a46cd8;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-.seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #a46cd8;
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2;
-  transition: background-color 0.3s ease;
-}
+    .botao:hover {
+      background-color: #7b4bb3;
+    }
 
-.seta:hover {
-  background-color: #7b4bb3;
-}
+    /* Responsivo */
+    @media (min-width: 769px) {
+      .servico-card {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+      }
+    }
 
-.seta.esquerda {
-  left: 10px;
-}
-
-.seta.direita {
-  right: 10px;
-}
-
-/* Responsividade para telas pequenas */
-/* Responsividade para telas pequenas (celulares) */
-@media (max-width: 768px) {
-  /* Navbar - Mantendo o texto roxo antes de rolar a página */
-  #navbar a {
-    color: #552774; /* Cor roxa para o texto da navbar */
-  }
-
-  #navbar a:hover {
-    color: #8e52ab; /* Cor roxa mais clara ao passar o mouse */
-  }
-
-  /* O restante do estilo da navbar pode permanecer o mesmo */
-  .seta {
-    font-size: 1.5rem; /* Ajusta o tamanho da seta */
-    padding: 8px; /* Ajusta o padding */
-  }
-}
-
-@media (max-width: 480px) {
-  /* Responsividade para telas menores (celulares) */
-  #servicos {
-    padding: 40px 10px; /* Reduz o padding para telas pequenas */
-  }
-
-  .servico-card {
-    width: 100%; /* O card vai ocupar toda a largura disponível */
-    max-width: 100%; /* Limita a largura para não exceder a tela */
-  }
-
-  .seta {
-    font-size: 1.3rem; /* Diminui ainda mais o tamanho da seta */
-    padding: 6px; /* Ajusta o padding da seta */
-  }
-}
+    @media (min-width: 1025px) {
+      .servico-card {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
