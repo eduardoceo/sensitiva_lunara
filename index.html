@@ -56,42 +56,45 @@
       </div>
     </section>
   
-    <section id="servicos">
-      <div class="servicos-container">
-        <h2 class="title">Alguns De Nossos Serviços Espirituais</h2>
-        <div class="carrossel-wrapper">
-          <button class="seta esquerda">&#10094;</button>
-          <div class="carrossel-servicos" id="carrosselServicos">
-            <div class="servico-card">
-              <img src="imagens/servico1.jpg" alt="Simpatias">
-              <h3>Simpatias</h3>
-              <p>Realizamos simpatias específicas para atrair amor, prosperidade, sucesso profissional e abertura de caminhos em diversas áreas da sua vida.</p>
-            </div>
-            <div class="servico-card">
-              <img src="imagens/servico2.jpg" alt="Limpeza Espiritual">
-              <h3>Limpeza Espiritual</h3>
-              <p>Purificação de ambientes e energias pessoais, removendo bloqueios e trazendo equilíbrio para sua vida cotidiana e emocional.</p>
-            </div>
-            <div class="servico-card">
-              <img src="imagens/servico3.jpg" alt="Bloqueios Energéticos">
-              <h3>Bloqueios Energéticos</h3>
-              <p>Eliminamos influências negativas que podem estar bloqueando seu caminho, abrindo espaço para novas oportunidades e uma energia mais fluida.</p>
-            </div>
-            <div class="servico-card">
-              <img src="imagens/servico4.jpg" alt="Amarração Amorosa">
-              <h3>Amarração Amorosa</h3>
-              <p>Conectamos energias para fortalecer laços afetivos e promover a harmonia em relacionamentos, trazendo equilíbrio e paixão renovada.</p>
-            </div>
-            <div class="servico-card">
-              <img src="imagens/servico5.jpg" alt="Mapa Astral">
-              <h3>Mapa Astral</h3>
-              <p>Interpretamos seu mapa astral para ajudar a entender sua essência, propósitos de vida e como aproveitar as energias planetárias a seu favor.</p>
-            </div>
-          </div>
-          <button class="seta direita">&#10095;</button>
+   <section id="servicos">
+  <div class="servicos-container">
+    <h2 class="title">Alguns De Nossos Serviços Espirituais</h2>
+    <div class="carrossel-wrapper">
+      <div class="carrossel-servicos" id="carrosselServicos">
+        <div class="servico-card">
+          <img src="imagens/servico1.jpg" alt="Simpatias">
+          <h3>Simpatias</h3>
+          <p>Realizamos simpatias para atrair amor, prosperidade e sucesso.</p>
+        </div>
+        <div class="servico-card">
+          <img src="imagens/servico2.jpg" alt="Limpeza Espiritual">
+          <h3>Limpeza Espiritual</h3>
+          <p>Purificação de ambientes e energias pessoais para equilíbrio emocional.</p>
+        </div>
+        <div class="servico-card">
+          <img src="imagens/servico3.jpg" alt="Bloqueios Energéticos">
+          <h3>Bloqueios Energéticos</h3>
+          <p>Eliminamos influências negativas e abrimos espaço para novas oportunidades.</p>
+        </div>
+        <div class="servico-card">
+          <img src="imagens/servico4.jpg" alt="Amarração Amorosa">
+          <h3>Amarração Amorosa</h3>
+          <p>Fortalecemos laços afetivos e promovemos harmonia no relacionamento.</p>
+        </div>
+        <div class="servico-card">
+          <img src="imagens/servico5.jpg" alt="Mapa Astral">
+          <h3>Mapa Astral</h3>
+          <p>Interpretamos seu mapa astral para guiar seus propósitos de vida.</p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="botoes-carrossel">
+      <button class="botao" onclick="moverCarrossel(-1)">&#10094; </button>
+      <button class="botao" onclick="moverCarrossel(1)"> &#10095;</button>
+    </div>
+  </div>
+</section>
   
     <section id="avaliacoes">
       <div class="container">
@@ -230,18 +233,26 @@ function shrinkHeaderOnScroll() {
 
 
   const carrossel = document.getElementById("carrosselServicos");
-  const btnEsquerda = document.querySelector(".seta.esquerda");
-  const btnDireita = document.querySelector(".seta.direita");
-  const scrollValor = 300;
+  const cards = document.querySelectorAll(".servico-card");
 
-  btnEsquerda.addEventListener("click", () => {
-    carrossel.scrollBy({ left: -scrollValor, behavior: 'smooth' });
+  let currentIndex = 0;
+
+  function moverCarrossel(direcao) {
+    const cardWidth = cards[0].offsetWidth + 20; // largura + margem
+    const totalCards = cards.length;
+    const maxIndex = totalCards - Math.floor(carrossel.offsetWidth / cardWidth);
+
+    currentIndex += direcao;
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    carrossel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  window.addEventListener("resize", () => {
+    moverCarrossel(0); // Reajusta ao redimensionar
   });
-
-  btnDireita.addEventListener("click", () => {
-    carrossel.scrollBy({ left: scrollValor, behavior: 'smooth' });
-  });
-
 
 // Alterna a visibilidade do menu
 document.querySelector('.menu-icon').addEventListener('click', function() {
