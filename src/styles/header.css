@@ -7,6 +7,7 @@ header {
     z-index: 1000;
     transition: all 0.3s ease-in-out;
     background-color: transparent;
+    
 }
 
 header.shrink {
@@ -25,6 +26,7 @@ header.shrink {
 #navbar a {
 
     text-decoration: none;
+        
 
 }
 
@@ -33,6 +35,7 @@ header.shrink {
     color: white;
     transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
     margin-right: 8px;
+    
 }
 
 header.shrink #navbar i {
@@ -57,13 +60,17 @@ header.shrink #nav_logo {
     display: flex;
     gap: 32px;
     list-style: none;
+    
+    
+    
 }
 
 .nav_item a {
     text-decoration: none;
     font-weight: 600;
-    color: white;
     transition: color 0.3s ease-in-out;
+    color: white;
+    
 }
 
 header.shrink .nav_item a {
@@ -116,10 +123,8 @@ header.shrink .btn_default {
 }
 
 
-#navbar i,
-.nav_item a {
-    color: #552774;
-}
+
+
 
 /* Quando encolher (rolagem) - já está configurado */
 header.shrink .nav_item a,

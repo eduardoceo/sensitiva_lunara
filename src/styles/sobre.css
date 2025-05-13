@@ -48,7 +48,7 @@
   }
 
   .sobre-imagem img {
-    max-width: 100%; /* A imagem vai ocupar toda a largura disponível */
+    max-width: 80%; /* A imagem vai ocupar toda a largura disponível */
   }
 
   .sobre-texto {
